@@ -12,6 +12,7 @@ import 'overlayscrollbars/overlayscrollbars.css';
 import TOCView from './TOCView';
 import BooknoteView from './BooknoteView';
 import TabNavigation from './TabNavigation';
+import ChatView from './ChatView'; // added new import
 
 const SidebarContent: React.FC<{
   bookDoc: BookDoc;
@@ -80,6 +81,9 @@ const SidebarContent: React.FC<{
             )}
             {targetTab === 'bookmarks' && (
               <BooknoteView type='bookmark' toc={bookDoc.toc ?? []} bookKey={sideBarBookKey} />
+            )}
+            {targetTab === 'chat' && (
+              <ChatView bookKey={sideBarBookKey} /> // Add highlights view
             )}
           </div>
         </OverlayScrollbarsComponent>
