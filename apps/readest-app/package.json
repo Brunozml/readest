@@ -43,6 +43,8 @@
     "build-check": "pnpm build && pnpm build-web && pnpm check:all"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^2.0.44",
+    "@ai-sdk/react": "^2.0.60",
     "@aws-sdk/client-s3": "^3.735.0",
     "@aws-sdk/s3-request-presigner": "^3.735.0",
     "@ducanh2912/next-pwa": "^10.2.9",
@@ -67,6 +69,7 @@
     "@tauri-apps/plugin-shell": "~2.3.1",
     "@tauri-apps/plugin-updater": "^2.9.0",
     "@zip.js/zip.js": "^2.7.53",
+    "ai": "^5.0.60",
     "app-store-server-api": "^0.17.1",
     "aws4fetch": "^1.0.20",
     "clsx": "^2.1.1",
@@ -99,7 +102,7 @@
     "stripe": "^18.2.1",
     "tinycolor2": "^1.6.0",
     "uuid": "^11.1.0",
-    "zod": "^4.0.8",
+    "zod": "^4.0.10",
     "zustand": "5.0.6"
   },
   "devDependencies": {

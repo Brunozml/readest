@@ -86,7 +86,7 @@ const WikipediaPopup: React.FC<WikipediaPopupProps> = ({
         h1.innerText = 'Error';
 
         const errorMsg = document.createElement('p');
-        errorMsg.innerHTML = `Unable to load the article. Try searching directly on <a href="https://${language}.wikipedia.org/w/index.php?search=${encodeURIComponent(
+        errorMsg.innerHTML = `Unable to load the article, possibly because this article doesn't exist. Try searching directly on <a href="https://${language}.wikipedia.org/w/index.php?search=${encodeURIComponent(
           query,
         )}" target="_blank" rel="noopener noreferrer" class="text-primary underline">Wikipedia</a>.`;
 
