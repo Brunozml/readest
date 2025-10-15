@@ -27,7 +27,7 @@ const TabNavigation: React.FC<{
     >
       <div
         className={clsx(
-          'bg-base-300 absolute bottom-1.5 start-1 z-10 h-[calc(100%-12px)] w-[calc(33.3%-8px)] rounded-lg',
+          'bg-base-300 absolute bottom-1.5 start-1 z-10 h-[calc(100%-12px)] w-[calc(25%-8px)] rounded-lg', // Changed from 33.3% to 25% for 4 tabs
           'transform transition-transform duration-300',
           activeTab === 'toc' && 'translate-x-0',
           activeTab === 'annotations' && 'translate-x-[calc(100%+8px)]',
