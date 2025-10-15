@@ -3,6 +3,7 @@ import React from 'react';
 import { MdBookmarkBorder as BookmarkIcon } from 'react-icons/md';
 import { IoIosList as TOCIcon } from 'react-icons/io';
 import { PiNotePencil as NoteIcon } from 'react-icons/pi';
+import { RiChatAiLine as ChatIcon } from 'react-icons/ri'; // new addition for AI chat tab
 
 import { useEnv } from '@/context/EnvContext';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -14,7 +15,7 @@ const TabNavigation: React.FC<{
   const _ = useTranslation();
   const { appService } = useEnv();
 
-  const tabs = ['toc', 'annotations', 'bookmarks'];
+  const tabs = ['toc', 'annotations', 'bookmarks', 'chat']; //added highlights to array
 
   return (
     <div
@@ -26,11 +27,12 @@ const TabNavigation: React.FC<{
     >
       <div
         className={clsx(
-          'bg-base-300/85 absolute bottom-1.5 start-1 z-10 h-[calc(100%-12px)] w-[calc(33.3%-8px)] rounded-lg',
+          'bg-base-300 absolute bottom-1.5 start-1 z-10 h-[calc(100%-12px)] w-[calc(33.3%-8px)] rounded-lg',
           'transform transition-transform duration-300',
           activeTab === 'toc' && 'translate-x-0',
           activeTab === 'annotations' && 'translate-x-[calc(100%+8px)]',
           activeTab === 'bookmarks' && 'translate-x-[calc(200%+16px)]',
+          activeTab === 'chat' && 'translate-x-[calc(300%+24px)]', // Add chat position
         )}
       />
       {tabs.map((tab) => (
@@ -56,8 +58,10 @@ const TabNavigation: React.FC<{
               <TOCIcon className='mx-auto' />
             ) : tab === 'annotations' ? (
               <NoteIcon className='mx-auto' />
-            ) : (
+            ) : tab === 'bookmarks' ? (
               <BookmarkIcon className='mx-auto' />
+            ) : (
+              <ChatIcon className='mx-auto' /> // Add AI Chat icon
             )}
           </div>
         </div>
